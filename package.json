@@ -1,0 +1,12 @@
+{
+  "name": "codewars",
+  "version": "1.0.0",
+  "description": "Solutions for hpCodeWars2019",
+  "main": "index.js",
+  "author": "K. Raphael",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/node": "^10.*"
+  }
+}
