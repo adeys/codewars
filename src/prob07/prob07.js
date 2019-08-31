@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 let input = "";
-const max = 100;
 process.stdin.on("data", data => input += data.toString());
 
 process.stdin.on("end", () => {
