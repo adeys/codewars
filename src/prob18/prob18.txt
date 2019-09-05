@@ -1,0 +1,23 @@
+4
+Degree Category:
+Associates
+Bachelors
+Masters
+Doctorate
+State Category:
+California
+Texas
+New York
+Ohio
+Car Category:
+Tesla
+Ford
+Honda
+Jeep
+Years In College Category:
+3
+4
+5
+6
+Magic Number:
+3

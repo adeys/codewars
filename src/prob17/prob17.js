@@ -13,23 +13,26 @@ process.stdin.on("end", () => {
     }
 
     let regular = {}, tenPlus = {};
+    const sort = (asc = true) => {
+        return (a, b) => {
+            const code = input => input === ' ' ? 20 : input.charCodeAt(0);
+            let res = code(a) < code(b);
+            return asc
+                ? (res ? -1 : 1)
+                : (res ? 1 : -1);
+        }
+    };
     for (let char of Object.keys(map)) {
         let current = map[char];
         current < 10 ? regular[char] = current : tenPlus[char] = current;
     }
 
     let string = "";
-    Object.keys(regular).sort((a, b) => {
-        const code = input => input === ' ' ? 20 : input.charCodeAt(0);
-        return code(a) > code(b) ? -1 : 1;
-    }).forEach(key => string +=`${key === " " ? "_" : key}[${regular[key]}]`);
+    Object.keys(regular).sort(sort(false)).forEach(key => string +=`${key === " " ? "_" : key}[${regular[key]}]`);
 
     string += ";";
 
-    Object.keys(tenPlus).sort((a, b) => {
-        const code = input => input === ' ' ? 20 : input.charCodeAt(0);
-        return code(a) < code(b) ? -1 : 1;
-    }).forEach(key => string +=`${key === " " ? "_" : key}[${tenPlus[key]}]`);
+    Object.keys(tenPlus).sort(sort()).forEach(key => string +=`${key === " " ? "_" : key}[${tenPlus[key]}]`);
 
     console.log(string);
 });
